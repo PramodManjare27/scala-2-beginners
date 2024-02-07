@@ -51,6 +51,29 @@ println(aFunction(1,2,"MUL"))
         f(1) = 1
         f(2) = 1
         f(n) = f(n - 1) + f(n - 2)
-    4.  Tests if a number is prime.
+    */
+   // for Fibonacci series last two numbers are added to derive next
+   // 1  1  2  3  5  8  13  21  34 .....
+    def Fibonacci( n : Int) : Int = {
+    if ( n <= 2) 1
+    else Fibonacci(n-1) + Fibonacci (n -2 )
+    }
+    println(Fibonacci(9))
+    /*4.  Tests if a number is prime.
    */
+//  for testing number is prime or not, logic is 
+// Divide number by its half, if remainder is non zero, divide by half - 1 recurrsively
+// Write a sub function for it
+
+def isPrime( n : Int) : Boolean = {
+  def Utilfunction ( t : Int ) : Boolean ={
+    if ( t <= 1) true
+    else n % t != 0  &&  Utilfunction( t - 1 )
+    
+  }
+  Utilfunction(n/2)
+}
+ println(isPrime(37))
+  println(isPrime(2003))
+  println(isPrime(37 * 17))
 }
